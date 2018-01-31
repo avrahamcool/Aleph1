@@ -34,6 +34,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aleph1.Logging", "Aleph1.Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging", "Aleph1.Logging\Aleph1.Logging.csproj", "{0CADD366-3365-4522-A7BF-F0D16C369CB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging.Backend", "Aleph1.Logging.Backend\Aleph1.Logging.Backend.csproj", "{2B60DA87-4E4E-4625-8B80-2D233BC9D814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{0CADD366-3365-4522-A7BF-F0D16C369CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CADD366-3365-4522-A7BF-F0D16C369CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CADD366-3365-4522-A7BF-F0D16C369CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B60DA87-4E4E-4625-8B80-2D233BC9D814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B60DA87-4E4E-4625-8B80-2D233BC9D814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B60DA87-4E4E-4625-8B80-2D233BC9D814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B60DA87-4E4E-4625-8B80-2D233BC9D814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{C4E7B496-1A10-40A3-8817-294ED03704AF} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{DDD3286F-7F7A-4C33-BE69-9647929CDD36} = {12B7D42B-619B-46C7-AD97-64C244698F03}
 		{0CADD366-3365-4522-A7BF-F0D16C369CB3} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
+		{2B60DA87-4E4E-4625-8B80-2D233BC9D814} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {528F5B2B-5A72-400F-A5C0-FF33FAF8E163}

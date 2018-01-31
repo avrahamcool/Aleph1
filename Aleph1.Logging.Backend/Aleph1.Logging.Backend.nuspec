@@ -14,4 +14,7 @@
     <copyright>$copyright$</copyright>
     <tags>Aleph1 Logging NLog PostSharp</tags>
   </metadata>
+  <files>
+    <file src="Content\*" target="content" />
+  </files>
 </package>
