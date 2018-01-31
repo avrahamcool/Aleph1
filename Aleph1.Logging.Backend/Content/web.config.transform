@@ -1,7 +1,9 @@
 ﻿<configuration>
+  
   <configSections>
     <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
   </configSections>
+  
   <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" autoReload="false" throwExceptions="false" internalLogLevel="Error" internalLogFile="C:\Temp\Logs\nlog-internal.log">
     <targets async="true">
       <default-wrapper xsi:type="RetryingWrapper" retryCount="5" retryDelayMilliseconds="5000" />
@@ -24,4 +26,5 @@
       <logger name="Aleph1.Logging.LoggedAttribute" writeTo="TraceFile" />
     </rules>
   </nlog>
+  
 </configuration>
