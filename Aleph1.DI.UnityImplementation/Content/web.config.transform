@@ -1,7 +1,0 @@
-﻿<configuration>
-  
-  <appSettings>
-    <add key="ModulesPath" value="Path/To/DLL ; ../Path/To/DLL2" />
-  </appSettings>
-  
-</configuration>

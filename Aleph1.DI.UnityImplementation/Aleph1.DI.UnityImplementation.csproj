@@ -46,15 +46,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\Classes\SettingsManager.cs.pp" />
-    <Compile Include="UnityImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnityModuleRegistrar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Aleph1.DI.UnityImplementation.nuspec" />
-    <None Include="Content\app.config.transform" />
-    <None Include="Content\web.config.transform" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

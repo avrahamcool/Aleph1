@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Aleph1.DI.Contracts")]
-[assembly: AssemblyDescription("Contracts for Aleph1.DI")]
+[assembly: AssemblyTitle("Aleph1.DI.UnityWebAPI")]
+[assembly: AssemblyDescription("Aleph1 DI using Unity for WebAPI")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aleph1")]
-[assembly: AssemblyProduct("Aleph1.DI.Contracts")]
+[assembly: AssemblyProduct("Aleph1.DI.UnityWebAPI")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("5a7814b8-4ff2-4e9d-8a1c-8fad9101805c")]
+[assembly: Guid("aa73ee4f-895b-4b0d-ac01-9cc6d64a8260")]
 
 // Version information for an assembly consists of the following four values:
 //

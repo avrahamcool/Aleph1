@@ -13,5 +13,12 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>Aleph1 DI Unity</tags>
+
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" />
+    </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="Content\**" target="content" />
+  </files>
 </package>
