@@ -8,6 +8,7 @@ namespace $rootnamespace$.Classes
     internal static class SettingsManager
     {
         private static string[] _modulesPath;
+
         /// <summary>Gets the modules to load as an array of paths.</summary>
         /// <value>array of module paths</value>
         public static string[] ModulesPath
@@ -26,6 +27,23 @@ namespace $rootnamespace$.Classes
                     }
                 }
                 return _modulesPath;
+            }
+        }
+
+
+		private static string _documentationDirPath;
+
+        /// <summary>Gets the documentation dir path.</summary>
+        /// <value>The documentation dir path.</value>
+        public static string DocumentationDirPath
+        {
+            get
+            {
+                if (_documentationDirPath == default(string))
+                {
+                    _documentationDirPath = new Uri(new Uri(AppDomain.CurrentDomain.BaseDirectory), ConfigurationManager.AppSettings["DocumentationDirPath"]).LocalPath;
+                }
+                return _documentationDirPath;
             }
         }
     }

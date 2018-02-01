@@ -1,5 +1,4 @@
 ﻿<configuration>
-  
   <configSections>
     <section name="nlog" type="NLog.Config.ConfigSectionHandler, NLog" />
   </configSections>
@@ -7,7 +6,6 @@
   <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" autoReload="false" throwExceptions="false" internalLogLevel="Error" internalLogFile="C:\Temp\Logs\nlog-internal.log">
     <targets async="true">
       <default-wrapper xsi:type="RetryingWrapper" retryCount="5" retryDelayMilliseconds="5000" />
-
       <target xsi:type="File" name="TraceFile" encoding="utf-8" fileName="C:\Temp\Logs\Trace.log" keepFileOpen="false" archiveFileName="C:\Temp\Logs\Archives\{#}.log" archiveEvery="Day" archiveNumbering="Date" archiveDateFormat="yyyy-MM-dd" maxArchiveFiles="7">
         <layout xsi:type="CsvLayout" withHeader="false" quoting="Nothing" delimiter="Pipe">
           <column name="CorrelationID" layout="${event-properties:item=A1_CorrelationID}" />
@@ -27,4 +25,8 @@
     </rules>
   </nlog>
   
+  <appSettings>
+    <add key="ModulesPath" value="Path\To\DLL ; ..\Path\To\DLL2" />
+    <add key="DocumentationDirPath" value="..\Path\To\DOC\Dir" />
+  </appSettings>
 </configuration>

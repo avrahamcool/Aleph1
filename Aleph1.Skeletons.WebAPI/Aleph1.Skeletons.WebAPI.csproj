@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PostSharp.5.0.44\build\PostSharp.props" Condition="Exists('..\packages\PostSharp.5.0.44\build\PostSharp.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AA73EE4F-895B-4B0D-AC01-9CC6D64A8260}</ProjectGuid>
+    <ProjectGuid>{5078D56E-740B-469B-A528-DB79FE266C5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aleph1.DI.UnityWebAPI</RootNamespace>
-    <AssemblyName>Aleph1.DI.UnityWebAPI</AssemblyName>
+    <RootNamespace>Aleph1.Skeletons.WebAPI</RootNamespace>
+    <AssemblyName>Aleph1.Skeletons.WebAPI</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Aleph1.DI.UnityWebAPI.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Aleph1.Skeletons.WebAPI.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,7 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Aleph1.DI.UnityWebAPI.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Aleph1.Skeletons.WebAPI.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -38,12 +41,30 @@
     <Reference Include="Aleph1.DI.UnityImplementation, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Aleph1.DI.UnityImplementation.2.2.0\lib\net471\Aleph1.DI.UnityImplementation.dll</HintPath>
     </Reference>
+    <Reference Include="Aleph1.Logging, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Logging.2.0.0\lib\net471\Aleph1.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Aleph1.Utilities, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Utilities.2.0.0\lib\net471\Aleph1.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Aleph1.WebAPI.ExceptionHandler, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.WebAPI.ExceptionHandler.2.0.0\lib\net471\Aleph1.WebAPI.ExceptionHandler.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=5.0.44.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.Redist.5.0.44\lib\net45\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,15 +94,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\App_Start\UnityConfig.cs.pp" />
+    <None Include="Content\App_Start\SwaggerConfig.cs.pp" />
+    <None Include="Content\App_Start\WebApiConfig.cs.pp" />
+    <None Include="Content\Global.asax.cs.pp" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Aleph1.DI.UnityWebAPI.nuspec" />
-    <None Include="app.config" />
+    <None Include="Aleph1.Skeletons.WebAPI.nuspec" />
+    <None Include="Content\App_Start\UnityConfig.cs.pp" />
     <None Include="Content\Classes\SettingsManager.cs.pp" />
     <None Include="Content\web.config.transform" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tools\Init.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -94,4 +120,12 @@ if not exist "$(SolutionDir)Nugets" mkdir "$(SolutionDir)Nugets"
 MOVE /Y  "$(TargetDir)*.nupkg" "$(SolutionDir)Nugets"
 )</PostBuildEvent>
   </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\PostSharp.5.0.44\build\PostSharp.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.5.0.44\build\PostSharp.props'))" />
+    <Error Condition="!Exists('..\packages\PostSharp.5.0.44\build\PostSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PostSharp.5.0.44\build\PostSharp.targets'))" />
+  </Target>
+  <Import Project="..\packages\PostSharp.5.0.44\build\PostSharp.targets" Condition="Exists('..\packages\PostSharp.5.0.44\build\PostSharp.targets')" />
 </Project>

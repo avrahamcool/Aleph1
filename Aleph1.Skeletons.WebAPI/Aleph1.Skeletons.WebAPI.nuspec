@@ -12,9 +12,14 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$copyright$</copyright>
-    <tags>Aleph1 Logging NLog PostSharp</tags>
+    <tags>Aleph1 WebAPI DI Unity Logging PostSharp Swagger</tags>
+
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" />
+    </frameworkAssemblies>
   </metadata>
   <files>
     <file src="Content\**" target="content" />
+    <file src="Tools\Init.ps1" target="tools\Init.ps1" />
   </files>
 </package>
