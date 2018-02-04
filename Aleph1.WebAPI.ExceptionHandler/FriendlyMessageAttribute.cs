@@ -5,24 +5,23 @@ namespace Aleph1.WebAPI.ExceptionHandler
 {
     /// <summary>Let the Actions use a frendly message</summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-    public class ExceptionHandlerAttribute : ExceptionFilterAttribute
+    public class FriendlyMessageAttribute : ExceptionFilterAttribute
     {
         /// <summary>The message to show for the client</summary>
-        public string CustomMessage { get; set; }
+        public string FriendlyMessage { get; set; }
 
-        /// <summary>You have to specify a Custom message</summary>
-        /// <param name="CustomMessage">The message to show for the client</param>
-        public ExceptionHandlerAttribute(string CustomMessage)
+        /// <summary>You have to specify a Friendly message</summary>
+        /// <param name="friendlyMessage">The message to show for the client</param>
+        public FriendlyMessageAttribute(string friendlyMessage)
         {
-            this.CustomMessage = CustomMessage;
+            this.FriendlyMessage = friendlyMessage;
         }
-
 
         /// <summary>replace the current Exception with a new one</summary>
         /// <param name="actionExecutedContext"></param>
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
-            actionExecutedContext.Exception = new Exception(CustomMessage, actionExecutedContext.Exception);
+            actionExecutedContext.Exception = new Exception(FriendlyMessage, actionExecutedContext.Exception);
         }
     }
 }
