@@ -13,5 +13,7 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>Aleph1 DI Unity</tags>
+
+    <releaseNotes>Updated to latest DICONTRACTS</releaseNotes>
   </metadata>
 </package>

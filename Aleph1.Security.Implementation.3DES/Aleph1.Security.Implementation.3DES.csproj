@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C4E7B496-1A10-40A3-8817-294ED03704AF}</ProjectGuid>
+    <ProjectGuid>{2A60A327-34BC-4396-95DD-E87207A652C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aleph1.DI.UnityImplementation</RootNamespace>
-    <AssemblyName>Aleph1.DI.UnityImplementation</AssemblyName>
+    <RootNamespace>Aleph1.Security.Implementation._3DES</RootNamespace>
+    <AssemblyName>Aleph1.Security.Implementation.3DES</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,28 +29,23 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Aleph1.DI.Contracts, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Aleph1.DI.Contracts.2.2.0\lib\net471\Aleph1.DI.Contracts.dll</HintPath>
+    <Reference Include="Aleph1.Security.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aleph1.Security.Contracts.1.0.0\lib\net471\Aleph1.Security.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="Unity.Abstractions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Abstractions.3.2.0\lib\net47\Unity.Abstractions.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Container, Version=5.6.0.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
-      <HintPath>..\packages\Unity.Container.5.6.0\lib\net47\Unity.Container.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnityModuleRegistrar.cs" />
+    <Compile Include="TripleDES.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Aleph1.DI.UnityImplementation.nuspec" />
+    <None Include="Aleph1.Security.Implementation.3DES.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

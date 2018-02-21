@@ -12,8 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>$copyright$</copyright>
-    <tags>Aleph1 WebAPI ExceptionHandler</tags>
-    
-    <releaseNotes>Updated to latest WEBAPI and JSON</releaseNotes>
+    <tags>Aleph1 Security Contracts</tags>
+    <releaseNotes>--</releaseNotes>
   </metadata>
 </package>

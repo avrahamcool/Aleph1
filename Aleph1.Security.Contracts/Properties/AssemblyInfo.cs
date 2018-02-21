@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Aleph1.DI.UnityImplementation")]
-[assembly: AssemblyDescription("Concrete Implementation of Aleph1.DI using Unity")]
+[assembly: AssemblyTitle("Aleph1.Security.Contracts")]
+[assembly: AssemblyDescription("Contracts for Aleph1.Security")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aleph1")]
-[assembly: AssemblyProduct("Aleph1.DI.UnityImplementation")]
+[assembly: AssemblyProduct("Aleph1.Security.Contracts")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c4e7b496-1a10-40a3-8817-294ed03704af")]
+[assembly: Guid("14a3ec80-d9cc-4339-a68e-b6ec0e173ab7")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.3.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
