@@ -26,10 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Aleph1.Logging", "2. Ale
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Aleph1.Security", "4. Aleph1.Security", "{84434352-B4A2-432B-A96E-F8652306342B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Contracts", "Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj", "{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Implementation.3DES", "Aleph1.Security.Implementation.3DES\Aleph1.Security.Implementation.3DES.csproj", "{2A60A327-34BC-4396-95DD-E87207A652C3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.DI.Contracts", "Aleph1.DI.Contracts\Aleph1.DI.Contracts.csproj", "{F9DCAC9C-4063-4836-9975-7AAC60CEAE69}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.DI.CustomConfigurationSection", "Aleph1.DI.CustomConfigurationSection\Aleph1.DI.CustomConfigurationSection.csproj", "{4A79B0A7-55B0-4F84-8355-C2D5BA7EE7BF}"
@@ -40,7 +36,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Utilities", "Aleph1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging", "Aleph1.Logging\Aleph1.Logging.csproj", "{0CADD366-3365-4522-A7BF-F0D16C369CB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.WebAPI.ExceptionHandler", "Aleph1.WebAPI.ExceptionHandler\Aleph1.WebAPI.ExceptionHandler.csproj", "{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.WebAPI.ExceptionHandler", "Aleph1.WebAPI.ExceptionHandler\Aleph1.WebAPI.ExceptionHandler.csproj", "{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Contracts", "Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj", "{3B055DBE-7E97-46C2-968C-382694377882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Implementation.3DES", "Aleph1.Security.Implementation.3DES\Aleph1.Security.Implementation.3DES.csproj", "{C1E516CA-A48D-4446-B535-CA60CF22B6F9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,14 +48,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2A60A327-34BC-4396-95DD-E87207A652C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A60A327-34BC-4396-95DD-E87207A652C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A60A327-34BC-4396-95DD-E87207A652C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A60A327-34BC-4396-95DD-E87207A652C3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9DCAC9C-4063-4836-9975-7AAC60CEAE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9DCAC9C-4063-4836-9975-7AAC60CEAE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9DCAC9C-4063-4836-9975-7AAC60CEAE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -80,19 +72,27 @@ Global
 		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B055DBE-7E97-46C2-968C-382694377882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B055DBE-7E97-46C2-968C-382694377882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B055DBE-7E97-46C2-968C-382694377882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B055DBE-7E97-46C2-968C-382694377882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7} = {84434352-B4A2-432B-A96E-F8652306342B}
-		{2A60A327-34BC-4396-95DD-E87207A652C3} = {84434352-B4A2-432B-A96E-F8652306342B}
 		{F9DCAC9C-4063-4836-9975-7AAC60CEAE69} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{4A79B0A7-55B0-4F84-8355-C2D5BA7EE7BF} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{714E1B8F-9991-43B7-8903-9F6321B89D6F} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{F9E30980-269F-4021-8880-871C856C8349} = {ACD6CF11-DFDB-4AAB-93D5-6645C38917B2}
 		{0CADD366-3365-4522-A7BF-F0D16C369CB3} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
 		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48} = {12B7D42B-619B-46C7-AD97-64C244698F03}
+		{3B055DBE-7E97-46C2-968C-382694377882} = {84434352-B4A2-432B-A96E-F8652306342B}
+		{C1E516CA-A48D-4446-B535-CA60CF22B6F9} = {84434352-B4A2-432B-A96E-F8652306342B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {528F5B2B-5A72-400F-A5C0-FF33FAF8E163}

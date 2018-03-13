@@ -1,56 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{14A3EC80-D9CC-4339-A68E-B6EC0E173AB7}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aleph1.Security.Contracts</RootNamespace>
-    <AssemblyName>Aleph1.Security.Contracts</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <TargetFrameworks>net45;net471</TargetFrameworks>
+    <Version>3.0.0</Version>
+    <Authors>Avraham Essoudry</Authors>
+    <PackageTags>Aleph1 Security Contracts</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+    <Company>Aleph1</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright Aleph1 ©  2018</Copyright>
+    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+    <Description>Contracts for Aleph1.Security</Description>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Aleph1.Security.Contracts.xml</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Aleph1.Security.Contracts.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ICipher.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Aleph1.Security.Contracts.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>if $(ConfigurationName) == Release (
 
-"$(SolutionDir)nuget.exe" pack "$(ProjectPath)" -Properties Configuration=Release  -IncludeReferencedProjects
-
-if not exist "$(SolutionDir)Nugets" mkdir "$(SolutionDir)Nugets"
-
-MOVE /Y  "$(TargetDir)*.nupkg" "$(SolutionDir)Nugets"
-)</PostBuildEvent>
-  </PropertyGroup>
 </Project>
