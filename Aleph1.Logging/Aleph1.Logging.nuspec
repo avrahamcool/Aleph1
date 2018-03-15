@@ -13,6 +13,6 @@
     <description>$description$</description>
     <copyright>$copyright$</copyright>
     <tags>Aleph1 Logging NLog PostSharp</tags>
-    <releaseNotes>Updated to latest POSTSHARP</releaseNotes>
+    <releaseNotes>added AttributeUsage to support inheritance</releaseNotes>
   </metadata>
 </package>

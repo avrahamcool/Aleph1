@@ -10,7 +10,7 @@ using System.Web.Script.Serialization;
 namespace Aleph1.Logging
 {
     /// <summary>Aspect to hanle logging</summary>
-    [Serializable]
+    [Serializable, AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true)]
     public class LoggedAttribute : OnMethodBoundaryAspect
     {
         /// <summary>Default = true, set to False when you dont want the parameters of the function to be logged</summary>
