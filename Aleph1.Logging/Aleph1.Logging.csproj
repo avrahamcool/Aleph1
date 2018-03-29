@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -15,13 +15,13 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Logging aspect using PostSharp</Description>
     <DebugType>Full</DebugType>
-    <PackageReleaseNotes>multitargets instead of 4.5</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated deps, added LineOfCodes</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Aleph1.Utilities" Version="3.0.0" />
-    <PackageReference Include="NLog" Version="4.4.13" />
-    <PackageReference Include="PostSharp" Version="5.0.48" />
+    <PackageReference Include="NLog" Version="4.5.0" />
+    <PackageReference Include="PostSharp" Version="5.0.49" />
   </ItemGroup>
 
   <ItemGroup>
