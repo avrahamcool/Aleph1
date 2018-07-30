@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security Contracts</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -15,6 +15,8 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Contracts for Aleph1.Security</Description>
     <DebugType>Full</DebugType>
+    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
+    <PackageReleaseNotes>updated doc</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
