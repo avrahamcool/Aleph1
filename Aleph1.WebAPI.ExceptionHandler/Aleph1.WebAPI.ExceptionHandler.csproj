@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 WebAPI ExceptionHandler</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -15,10 +15,11 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Handling custom Errors from WebAPI controllers with a single attribute</Description>
     <DebugType>Full</DebugType>
+    <PackageReleaseNotes>Updated deps</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.4" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.6" />
   </ItemGroup>
 
   <ItemGroup>

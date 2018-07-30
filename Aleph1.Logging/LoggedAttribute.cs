@@ -1,5 +1,4 @@
-﻿using Aleph1.Utitilies;
-using NLog;
+﻿using NLog;
 using PostSharp.Aspects;
 using System;
 using System.Collections.Generic;
@@ -51,7 +50,7 @@ namespace Aleph1.Logging
         {
             args.MethodExecutionTag = Guid.NewGuid();
             string message = LogParameters ? $"Entering with parameters: {GetArguments(args)}" : "Entering";
-            logger.Log(CreateEventInfo(LogLevel.Trace, message, args.MethodExecutionTag));
+            logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
         }
 
         /// <summary>Hanlde the logging of exiting a function. depends on LogReturnValue</summary>
@@ -59,31 +58,16 @@ namespace Aleph1.Logging
         public override sealed void OnExit(MethodExecutionArgs args)
         {
             string message = LogReturnValue ? $"Leaving with result: {GetReturnValue(args)}" : "Leaving";
-            logger.Log(CreateEventInfo(LogLevel.Trace, message, args.MethodExecutionTag));
+            logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
         }
 
         /// <summary>Hanlde the logging of an error in a function</summary>
         /// <param name="args"></param>
         public override sealed void OnException(MethodExecutionArgs args)
         {
-            LogEventInfo lei = CreateEventInfo(LogLevel.Error, args.Exception.StackTrace, args.MethodExecutionTag);
-            lei.Exception = args.Exception;
-
-            logger.Log(lei);
+            logger.LogAleph1(LogLevel.Error, args.Exception.StackTrace, args.Exception, args.MethodExecutionTag, ClassName, MethodName);
         }
 
-
-        private LogEventInfo CreateEventInfo(LogLevel logLevel, string message, object correlationID)
-        {
-            LogEventInfo retVal = new LogEventInfo(logLevel, null, message);
-
-            retVal.Properties.Add("A1_UserName", UserExtentions.CurrentUserName);
-            retVal.Properties.Add("A1_ClassName", ClassName);
-            retVal.Properties.Add("A1_MethodName", MethodName);
-            retVal.Properties.Add("A1_CorrelationID", correlationID);
-
-            return retVal;
-        }
         private string GetArguments(MethodExecutionArgs args)
         {
             if (ParameterNames.Length == 0)

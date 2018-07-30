@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Aleph1.DI", "0. Aleph1.DI", "{B6A902AE-3492-4363-AFC3-539DF6713B2B}"
@@ -40,7 +41,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Contracts",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Implementation.3DES", "Aleph1.Security.Implementation.3DES\Aleph1.Security.Implementation.3DES.csproj", "{C1E516CA-A48D-4446-B535-CA60CF22B6F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging", "Aleph1.Logging\Aleph1.Logging.csproj", "{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Logging", "Aleph1.Logging\Aleph1.Logging.csproj", "{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
