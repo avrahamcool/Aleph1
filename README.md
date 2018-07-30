@@ -28,6 +28,7 @@ general helper functions for web/desktop apps. (like getting the current logged 
 adding a [Logged] aspect for easy logging every function in your code. (can be easily configured via the config file)
 adding a helper function to facilitate NLog logging in Aleph1 format
 
+example: (in any class)
 ```csharp
 ILogger logger = LogManager.GetCurrentClassLogger();
 logger.LogAleph1(LogLevel.Info, "message");
