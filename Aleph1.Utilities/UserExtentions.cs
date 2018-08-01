@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System;
+using System.Security.Principal;
 using System.Web;
 
 namespace Aleph1.Utitilies
@@ -7,12 +8,17 @@ namespace Aleph1.Utitilies
     public static class UserExtentions
     {
         /// <summary>Get the current user logon name</summary>
-        /// <remarks>Identity from HttpContext, Identity from Windows Context => IP from HttpContext => Empty string</remarks>
+        /// <remarks>1) Identity from HttpContext: Name => IP => Empty string, 2) Identity from Windows Context</remarks>
         public static string CurrentUserName
         {
             get
             {
-                return HttpContext.Current?.User?.Identity?.Name ?? WindowsIdentity.GetCurrent()?.Name ?? HttpContext.Current?.Request.UserHostAddress ?? string.Empty;
+                if(HttpContext.Current != null)
+                {
+                    string name = HttpContext.Current?.User?.Identity?.Name;
+                    return String.IsNullOrWhiteSpace(name) ? (HttpContext.Current?.Request?.UserHostAddress ?? String.Empty) : name;
+                }
+                return WindowsIdentity.GetCurrent()?.Name ?? String.Empty;
             }
         }
     }
