@@ -15,7 +15,10 @@ namespace Aleph1.Utitilies
             {
                 // Accessing HttpContext.Current.Request Throws Exception when no handler configured
                 if (HttpContext.Current != null && HttpContext.Current.Handler != null)
-                    return HttpContext.Current.User?.Identity?.Name ?? HttpContext.Current.Request.UserHostAddress ?? String.Empty;
+                    return String.IsNullOrWhiteSpace(HttpContext.Current.User?.Identity?.Name) ?
+                        HttpContext.Current.Request.UserHostAddress :
+                        HttpContext.Current.User.Identity.Name
+                        ?? String.Empty;
 
                 return WindowsIdentity.GetCurrent()?.Name ?? String.Empty;
             }
