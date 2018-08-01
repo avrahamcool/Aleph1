@@ -11,7 +11,7 @@
     <Company>Aleph1</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 ©  2018</Copyright>
+    <Copyright>Copyright Aleph1 © 2018</Copyright>
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Common Utilities for Aleph1 projects</Description>
     <DebugType>Full</DebugType>

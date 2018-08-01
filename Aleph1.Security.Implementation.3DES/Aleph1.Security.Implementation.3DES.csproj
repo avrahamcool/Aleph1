@@ -11,7 +11,7 @@
     <Company>Aleph1</Company>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 ©  2018</Copyright>
+    <Copyright>Copyright Aleph1 © 2018</Copyright>
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Aleph1 Security implementation using the TripleDES algorithm</Description>
     <DebugType>Full</DebugType>
@@ -20,7 +20,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aleph1.Security.Contracts" Version="3.0.0" />
+    <PackageReference Include="Aleph1.Security.Contracts" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
