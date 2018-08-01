@@ -13,11 +13,10 @@ namespace Aleph1.Utitilies
         {
             get
             {
-                if(HttpContext.Current != null)
-                {
-                    string name = HttpContext.Current?.User?.Identity?.Name;
-                    return String.IsNullOrWhiteSpace(name) ? (HttpContext.Current?.Request?.UserHostAddress ?? String.Empty) : name;
-                }
+                // Accessing HttpContext.Current.Request Throws Exception when no handler configured
+                if (HttpContext.Current != null && HttpContext.Current.Handler != null)
+                    return HttpContext.Current.User?.Identity?.Name ?? HttpContext.Current.Request.UserHostAddress ?? String.Empty;
+
                 return WindowsIdentity.GetCurrent()?.Name ?? String.Empty;
             }
         }
