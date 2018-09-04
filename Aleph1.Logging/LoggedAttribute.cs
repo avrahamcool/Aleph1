@@ -39,7 +39,7 @@ namespace Aleph1.Logging
         /// <summary>Initializing the run time fields</summary>
         public override void RuntimeInitialize(MethodBase method)
         {
-            logger = LogManager.GetCurrentClassLogger();
+            logger = LogManager.GetLogger(ClassName);
             if (LogParameters || LogReturnValue)
                 serializer = new JavaScriptSerializer();
         }

@@ -19,10 +19,17 @@ namespace Aleph1.Logging
         /// <param name="methodName">optional - caller method name - calculated at buildtime</param>
         public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message, Exception exception = null, object correlationID = null, string className = null, [CallerMemberName] string methodName = "")
         {
-            LogEventInfo lei = new LogEventInfo(logLevel, null, message);
+            LogEventInfo lei = new LogEventInfo(logLevel, logger.Name, message);
+
+            try
+            {
+                className = className ?? new StackFrame(2, false).GetMethod().DeclaringType.Name;
+            }
+            catch
+            { }
 
             lei.Properties.Add("A1_UserName", UserExtentions.CurrentUserName);
-            lei.Properties.Add("A1_ClassName", className ?? new StackFrame(2, false).GetMethod().DeclaringType.Name);
+            lei.Properties.Add("A1_ClassName", className);
             lei.Properties.Add("A1_MethodName", methodName);
             lei.Properties.Add("A1_CorrelationID", correlationID);
 
