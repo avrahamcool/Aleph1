@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.0.1</Version>
+    <TargetFrameworks>net40;net45;net471</TargetFrameworks>
+    <Version>3.0.2</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -16,7 +16,7 @@
     <Description>Provides the necessary code to register components into the DI container</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
-    <PackageReleaseNotes>updated doc</PackageReleaseNotes>
+    <PackageReleaseNotes>added net40 support</PackageReleaseNotes>
   </PropertyGroup>
   
   <ItemGroup>

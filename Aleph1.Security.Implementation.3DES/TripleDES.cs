@@ -1,8 +1,8 @@
 ﻿using Aleph1.Security.Contracts;
+using Newtonsoft.Json;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Script.Serialization;
 
 namespace Aleph1.Security.Implementation._3DES
 {
@@ -11,7 +11,6 @@ namespace Aleph1.Security.Implementation._3DES
     public class TripleDES : ICipher
     {
         private const int KEY_SIZE = 24;
-        private static readonly JavaScriptSerializer TEXT_SERIALIZER = new JavaScriptSerializer();
 
         private static byte[] GetKey(string appPrefix, string userUniqueID)
         {
@@ -58,8 +57,8 @@ namespace Aleph1.Security.Implementation._3DES
 
                     //Throws error when invalid
                     string serizlizedTicket = Encoding.UTF8.GetString(decryptor.TransformFinalBlock(buffer, 0, buffer.Length));
-
-                    Storage<T> store = TEXT_SERIALIZER.Deserialize<Storage<T>>(serizlizedTicket);
+                    
+                    Storage<T> store = JsonConvert.DeserializeObject<Storage<T>>(serizlizedTicket);
                     if (store.ExpirationDate.HasValue && store.ExpirationDate.Value < DateTime.UtcNow)
                         throw new CryptographicException($"Data Expired {DateTime.UtcNow - store.ExpirationDate.Value} ago");
 
@@ -86,7 +85,7 @@ namespace Aleph1.Security.Implementation._3DES
                 using (ICryptoTransform encryptor = cryptoService.CreateEncryptor())
                 {
                     Storage<T> store = new Storage<T>(data, timeSpan);
-                    byte[] buffer = Encoding.UTF8.GetBytes(TEXT_SERIALIZER.Serialize(store));
+                    byte[] buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(store));
                     return Convert.ToBase64String(encryptor.TransformFinalBlock(buffer, 0, buffer.Length));
                 }
             }

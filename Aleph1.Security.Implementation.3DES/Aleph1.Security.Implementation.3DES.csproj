@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.0.1</Version>
+    <TargetFrameworks>net20;net45;net471</TargetFrameworks>
+    <Version>3.1.0</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security TripleDES 3DES</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -16,15 +16,15 @@
     <Description>Aleph1 Security implementation using the TripleDES algorithm</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
-    <PackageReleaseNotes>updated doc</PackageReleaseNotes>
+    <PackageReleaseNotes>switched to JSON.NET Added support for .net 2</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aleph1.Security.Contracts" Version="3.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="System.Web.Extensions" />
+    <ProjectReference Include="..\Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
