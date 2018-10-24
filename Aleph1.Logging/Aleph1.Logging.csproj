@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>5.0.0</Version>
+    <TargetFrameworks>net40;net45;net471</TargetFrameworks>
+    <Version>5.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -17,13 +17,16 @@
     <DebugType>Full</DebugType>
     <PackageReleaseNotes>Updated deps, added static Logger, updated doc</PackageReleaseNotes>
     <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
-    <PackageReleaseNotes>BREAKING CHANGES: added logger to layout - defaults to class name. update config and viewer.</PackageReleaseNotes>
+    <PackageReleaseNotes>added net40 support</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aleph1.Utilities" Version="3.1.3" />
     <PackageReference Include="NLog" Version="4.5.9" />
     <PackageReference Include="PostSharp" Version="6.0.26" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Aleph1.Utilities\Aleph1.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>
