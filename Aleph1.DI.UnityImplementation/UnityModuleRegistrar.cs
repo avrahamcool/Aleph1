@@ -21,9 +21,13 @@ namespace Aleph1.DI.UnityImplementation
         /// </summary>
         /// <typeparam name="TFrom">concrete type implementation</typeparam>
         /// <typeparam name="TTo">Interface</typeparam>
-        public void RegisterType<TFrom, TTo>() where TTo : TFrom
+        /// <param name="name">name to use for Named Registration, use null for default</param>
+        public void RegisterType<TFrom, TTo>(string name = null) where TTo : TFrom
         {
-            this._container.RegisterType<TFrom, TTo>();
+            if(name == null)
+                this._container.RegisterType<TFrom, TTo>();
+            else
+                this._container.RegisterType<TFrom, TTo>(name);
         }
 
         /// <summary>
@@ -31,9 +35,13 @@ namespace Aleph1.DI.UnityImplementation
         /// </summary>
         /// <typeparam name="TFrom">concrete type implementation</typeparam>
         /// <typeparam name="TTo">Interface</typeparam>
-        public void RegisterTypeAsSingelton<TFrom, TTo>() where TTo : TFrom
+        /// <param name="name">name to use for Named Registration, use null for default</param>
+        public void RegisterTypeAsSingelton<TFrom, TTo>(string name = null) where TTo : TFrom
         {
-            this._container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
+            if (name == null)
+                this._container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
+            else
+                this._container.RegisterType<TFrom, TTo>(name, new ContainerControlledLifetimeManager());
         }
     }
 }

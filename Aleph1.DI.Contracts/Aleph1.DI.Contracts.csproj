@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>3.0.2</Version>
+    <Version>3.1.0</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
