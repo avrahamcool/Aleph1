@@ -24,9 +24,11 @@ namespace Aleph1.Security.Implementation._3DES
         private class Storage<T>
         {
             public Storage() { }
-            public Storage(T data, TimeSpan? timeSpan)
+            public Storage(T data, string appPrefix, string userUniqueID, TimeSpan? timeSpan)
             {
                 Data = data;
+                AppPrefix = appPrefix;
+                UserUniqueID = userUniqueID;
                 if (timeSpan.HasValue)
                     ExpirationDate = DateTime.UtcNow + timeSpan.Value;
             }
@@ -35,6 +37,12 @@ namespace Aleph1.Security.Implementation._3DES
             
             /// <summary>if the date is null - the ticket is unlimited</summary>
             public DateTime? ExpirationDate { get; set; }
+
+            /// <summary>Encrypted into the ticket for further check</summary>
+            public string AppPrefix { get; set; }
+
+            /// <summary>Encrypted into the ticket for further check</summary>
+            public string UserUniqueID { get; set; }
         }
 
         /// <summary>Decrypts the specified data for a specific user in a spesific application.</summary>
@@ -59,6 +67,12 @@ namespace Aleph1.Security.Implementation._3DES
                     string serizlizedTicket = Encoding.UTF8.GetString(decryptor.TransformFinalBlock(buffer, 0, buffer.Length));
                     
                     Storage<T> store = JsonConvert.DeserializeObject<Storage<T>>(serizlizedTicket);
+                    
+                    //Ticket Decrypted successfully - but not for the right user
+                    if (store.AppPrefix != appPrefix || store.UserUniqueID != userUniqueID)
+                        throw new CryptographicException($"Ticket Violation");
+
+                    //Ticket Decrypted successfully - but expired
                     if (store.ExpirationDate.HasValue && store.ExpirationDate.Value < DateTime.UtcNow)
                         throw new CryptographicException($"Data Expired {DateTime.UtcNow - store.ExpirationDate.Value} ago");
 
@@ -84,7 +98,7 @@ namespace Aleph1.Security.Implementation._3DES
 
                 using (ICryptoTransform encryptor = cryptoService.CreateEncryptor())
                 {
-                    Storage<T> store = new Storage<T>(data, timeSpan);
+                    Storage<T> store = new Storage<T>(data, appPrefix, userUniqueID, timeSpan);
                     byte[] buffer = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(store));
                     return Convert.ToBase64String(encryptor.TransformFinalBlock(buffer, 0, buffer.Length));
                 }
