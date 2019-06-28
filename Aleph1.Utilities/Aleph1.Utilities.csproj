@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Common Utilities for Aleph1 projects</Description>
     <DebugType>Full</DebugType>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Utilities.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Utilities.xml</DocumentationFile>
     <PackageReleaseNotes>Updated licence</PackageReleaseNotes>
   </PropertyGroup>
 

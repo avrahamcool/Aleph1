@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Provides the necessary code to register components into the DI container</Description>
     <DebugType>Full</DebugType>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
     <PackageReleaseNotes>No longer crates ModuleIniit</PackageReleaseNotes>
   </PropertyGroup>
 

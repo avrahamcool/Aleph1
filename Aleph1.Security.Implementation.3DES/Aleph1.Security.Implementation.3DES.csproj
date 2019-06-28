@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Aleph1 Security implementation using the TripleDES algorithm</Description>
     <DebugType>Full</DebugType>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
     <PackageReleaseNotes>Breaking changes: changed they way the ticket are generated. UPDATE WITH CAUTION</PackageReleaseNotes>
   </PropertyGroup>
 

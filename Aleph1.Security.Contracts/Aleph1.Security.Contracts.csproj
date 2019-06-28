@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Contracts for Aleph1.Security</Description>
     <DebugType>Full</DebugType>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
     <PackageReleaseNotes>Updated Licence</PackageReleaseNotes>
   </PropertyGroup>
 

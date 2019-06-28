@@ -16,7 +16,7 @@
     <Description>Handling custom Errors from WebAPI controllers with a single attribute</Description>
     <DebugType>Full</DebugType>
     <PackageReleaseNotes>Updated WebAPI</PackageReleaseNotes>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.WebAPI.ExceptionHandler.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.WebAPI.ExceptionHandler.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

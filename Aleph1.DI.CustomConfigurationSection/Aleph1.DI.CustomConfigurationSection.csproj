@@ -15,7 +15,7 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Custom Configuration Section to facilitate Aleph1.DI config</Description>
     <DebugType>Full</DebugType>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.DI.CustomConfigurationSection.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.CustomConfigurationSection.xml</DocumentationFile>
     <PackageReleaseNotes>updated licence</PackageReleaseNotes>
   </PropertyGroup>
 

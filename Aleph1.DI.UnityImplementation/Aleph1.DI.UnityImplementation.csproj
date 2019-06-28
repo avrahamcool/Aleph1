@@ -16,7 +16,7 @@
     <Description>Concrete Implementation of Aleph1.DI using Unity</Description>
     <DebugType>Full</DebugType>
     <PackageReleaseNotes>Updated deps</PackageReleaseNotes>
-    <DocumentationFile>bin\Release\$(TargetFramework)\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
     <PackageReleaseNotes>updated Unity</PackageReleaseNotes>
   </PropertyGroup>
 
