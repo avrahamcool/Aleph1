@@ -49,4 +49,4 @@ a concrete implementation of the Security interface using 3DES
 ### 5. Aleph1.ClientFile
 * #### Aleph1.ClientFile.Models
 ClientFile Model for easy file uploading via JSON POST directly from the client.
-Should be use with (aleph1-client-file)[...]
+Should be use with [aleph1-client-file](https://github.com/avrahamcool/aleph1-client-file)
