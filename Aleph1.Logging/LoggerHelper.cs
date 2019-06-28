@@ -20,21 +20,15 @@ namespace Aleph1.Logging
         public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message, Exception exception = null, object correlationID = null, string className = null, [CallerMemberName] string methodName = "")
         {
             LogEventInfo lei = new LogEventInfo(logLevel, logger.Name, message);
-
-            try
-            {
-                className = className ?? new StackFrame(2, false).GetMethod().DeclaringType.Name;
-            }
-            catch
-            { }
-
+            
+            className = className ?? new StackFrame(1, false).GetMethod().DeclaringType.Name;
+            
             lei.Properties.Add("A1_UserName", UserExtentions.CurrentUserName);
             lei.Properties.Add("A1_ClassName", className);
             lei.Properties.Add("A1_MethodName", methodName);
             lei.Properties.Add("A1_CorrelationID", correlationID);
 
-            if (exception != null)
-                lei.Exception = exception;
+            lei.Exception = exception;
 
             logger.Log(lei);
         }
