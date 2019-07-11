@@ -53,9 +53,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj">
       <Project>{3b055dbe-7e97-46c2-968c-382694377882}</Project>
       <Name>Aleph1.Security.Contracts</Name>
@@ -64,6 +61,9 @@
       <Project>{c1e516ca-a48d-4446-b535-ca60cf22b6f9}</Project>
       <Name>Aleph1.Security.Implementation.3DES</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
