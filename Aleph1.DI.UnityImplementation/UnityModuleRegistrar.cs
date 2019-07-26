@@ -31,7 +31,7 @@ namespace Aleph1.DI.UnityImplementation
         }
 
         /// <summary>
-        /// register a singelton type mapping between a concrete type to a Interface
+        /// register a singleton type mapping between a concrete type to a Interface
         /// </summary>
         /// <typeparam name="TFrom">concrete type implementation</typeparam>
         /// <typeparam name="TTo">Interface</typeparam>

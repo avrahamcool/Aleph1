@@ -4,10 +4,10 @@ using System.Web;
 
 namespace Aleph1.Utitilies
 {
-    /// <summary>Handles common User related tasks (such as, getting the current user logon name)</summary>
+    /// <summary>Handles common User related tasks (such as, getting the current user login name)</summary>
     public static class UserExtentions
     {
-        /// <summary>Get the current user logon name</summary>
+        /// <summary>Get the current user login name</summary>
         /// <remarks>1) Identity from HttpContext: Name => IP => Empty string, 2) Identity from Windows Context</remarks>
         public static string CurrentUserName
         {

@@ -3,7 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#Aleph1 spesifics
+#Aleph1 specifics
 Nugets
 
 # User-specific files

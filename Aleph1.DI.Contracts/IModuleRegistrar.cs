@@ -10,7 +10,7 @@
         void RegisterType<TFrom, TTo>(string name = null) where TTo : TFrom;
 
 
-        /// <summary>register a singelton type mapping between a concrete type to a Interface</summary>
+        /// <summary>register a singleton type mapping between a concrete type to a Interface</summary>
         /// <typeparam name="TFrom">concrete type implementation</typeparam>
         /// <typeparam name="TTo">Interface</typeparam>
         /// <param name="name">name to use for Named Registration, use null for default</param>

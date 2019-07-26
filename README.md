@@ -21,7 +21,7 @@ custom ConfigSection for easy configuring the DI from app/web config
 
 ### 1. Aleph1.Utilities
 * #### Aleph1.Utilities
-general helper functions for web/desktop apps. (like getting the current logged in user regardless if in a web app or desktop)
+general helper functions for web/desktop Applications. (like getting the current logged in user regardless if in a web app or desktop)
 
 ### 2. Aleph1.Logging
 * #### Aleph1.Logging

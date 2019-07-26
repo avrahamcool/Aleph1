@@ -13,7 +13,7 @@ namespace Aleph1.DI.Contracts
         /// <summary>uses MEF to load all the IModule implementations to the Registrar</summary>
         /// <param name="registrar">IModuleRegistrar</param>
         /// <param name="rootPath">path to the root directory of the project</param>
-        /// <param name="assemblies">retlative path to the dll to load.</param>
+        /// <param name="assemblies">relative path to the DLL to load.</param>
         public static void LoadModulesFromAssemblies(IModuleRegistrar registrar, string rootPath, string[] assemblies)
         {
             Uri baseUri = new Uri(rootPath);

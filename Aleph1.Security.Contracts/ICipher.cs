@@ -2,7 +2,7 @@
 
 namespace Aleph1.Security.Contracts
 {
-    /// <summary>A common iterface for Encryption / Decryption of data</summary>
+    /// <summary>A common interface for Encryption / Decryption of data</summary>
     public interface ICipher
     {
         /// <summary>Encrypts the specified data for a specific user in a specific application.</summary>
@@ -15,7 +15,7 @@ namespace Aleph1.Security.Contracts
         string Encrypt<T>(string appPrefix, string userUniqueID, T data, TimeSpan? timeSpan = null);
 
 
-        /// <summary>Decrypts the specified data for a specific user in a spesific application.</summary>
+        /// <summary>Decrypts the specified data for a specific user in a specific application.</summary>
         /// <typeparam name="T">Any</typeparam>
         /// <param name="appPrefix">The application prefix.</param>
         /// <param name="userUniqueID">The user unique identifier.</param>

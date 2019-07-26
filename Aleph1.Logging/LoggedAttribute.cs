@@ -8,11 +8,11 @@ using System.Web.Script.Serialization;
 
 namespace Aleph1.Logging
 {
-    /// <summary>Aspect to hanle logging</summary>
+    /// <summary>Aspect to handle logging</summary>
     [Serializable, AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true), LinesOfCodeAvoided(20)]
     public class LoggedAttribute : OnMethodBoundaryAspect
     {
-        /// <summary>Default = true, set to False when you dont want the parameters of the function to be logged</summary>
+        /// <summary>Default = true, set to False when you don't want the parameters of the function to be logged</summary>
         public bool LogParameters { get; set; } = true;
 
         /// <summary>Default = false, set to true when you want the return value of the function to be logged</summary>
@@ -44,7 +44,7 @@ namespace Aleph1.Logging
                 serializer = new JavaScriptSerializer();
         }
 
-        /// <summary>Hanlde the logging of entering a function. depends on LogParameters</summary>
+        /// <summary>Handle the logging of entering a function. depends on LogParameters</summary>
         /// <param name="args"></param>
         public override sealed void OnEntry(MethodExecutionArgs args)
         {
@@ -53,7 +53,7 @@ namespace Aleph1.Logging
             logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
         }
 
-        /// <summary>Hanlde the logging of exiting a function. depends on LogReturnValue</summary>
+        /// <summary>Handle the logging of exiting a function. depends on LogReturnValue</summary>
         /// <param name="args"></param>
         public override sealed void OnExit(MethodExecutionArgs args)
         {
@@ -61,7 +61,7 @@ namespace Aleph1.Logging
             logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
         }
 
-        /// <summary>Hanlde the logging of an error in a function</summary>
+        /// <summary>Handle the logging of an error in a function</summary>
         /// <param name="args"></param>
         public override sealed void OnException(MethodExecutionArgs args)
         {

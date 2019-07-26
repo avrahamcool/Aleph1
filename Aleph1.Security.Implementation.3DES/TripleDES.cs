@@ -45,7 +45,7 @@ namespace Aleph1.Security.Implementation._3DES
             public string UserUniqueID { get; set; }
         }
 
-        /// <summary>Decrypts the specified data for a specific user in a spesific application.</summary>
+        /// <summary>Decrypts the specified data for a specific user in a specific application.</summary>
         /// <typeparam name="T">Any</typeparam>
         /// <param name="appPrefix">The application prefix.</param>
         /// <param name="userUniqueID">The user unique identifier.</param>

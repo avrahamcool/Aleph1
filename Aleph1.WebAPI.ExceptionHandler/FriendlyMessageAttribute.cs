@@ -3,7 +3,7 @@ using System.Web.Http.Filters;
 
 namespace Aleph1.WebAPI.ExceptionHandler
 {
-    /// <summary>Let the Actions use a frendly message</summary>
+    /// <summary>Let the Actions use a friendly message</summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
     public class FriendlyMessageAttribute : ExceptionFilterAttribute
     {

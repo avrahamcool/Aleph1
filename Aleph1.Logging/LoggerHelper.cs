@@ -10,13 +10,13 @@ namespace Aleph1.Logging
     public static class LoggerHelper
     {
         /// <summary>Log a message in the Aleph1 format</summary>
-        /// <param name="logger">the logger to lof to</param>
+        /// <param name="logger">the logger to log to</param>
         /// <param name="logLevel">log level</param>
         /// <param name="message">message</param>
         /// <param name="exception">optional - exception</param>
         /// <param name="correlationID">optional - can be used to identify multiple messages as part of an action</param>
         /// <param name="className">optional - caller class name - calculated at runtime</param>
-        /// <param name="methodName">optional - caller method name - calculated at buildtime</param>
+        /// <param name="methodName">optional - caller method name - calculated at build time</param>
         public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message, Exception exception = null, object correlationID = null, string className = null, [CallerMemberName] string methodName = "")
         {
             LogEventInfo lei = new LogEventInfo(logLevel, logger.Name, message);
