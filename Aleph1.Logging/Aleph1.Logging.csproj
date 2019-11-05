@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.6.6" />
+    <PackageReference Include="NLog" Version="4.6.8" />
     <PackageReference Include="PostSharp" Version="6.2.9" />
   </ItemGroup>
 
