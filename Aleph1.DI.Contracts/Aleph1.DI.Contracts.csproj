@@ -2,10 +2,9 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>3.3.0</Version>
+    <Version>3.3.2</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
     <Company>Aleph1</Company>
@@ -16,10 +15,15 @@
     <Description>Provides the necessary code to register components into the DI container</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
-    <PackageReleaseNotes>No longer crates ModuleIniit</PackageReleaseNotes>
+    <PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
+    <PackageIcon>Aleph1.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="System.ComponentModel.Composition" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
   </ItemGroup>
 </Project>

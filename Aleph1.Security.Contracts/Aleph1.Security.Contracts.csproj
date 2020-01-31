@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net20;net45;net471</TargetFrameworks>
-    <Version>3.3.0</Version>
+    <Version>3.3.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security Contracts</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
+    <PackageIcon>Aleph1.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
     <Company>Aleph1</Company>
@@ -16,7 +16,11 @@
     <Description>Contracts for Aleph1.Security</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
-    <PackageReleaseNotes>Updated Licence</PackageReleaseNotes>
+    <PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
 </Project>

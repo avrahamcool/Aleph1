@@ -15,7 +15,6 @@
     <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
     <Description>Logging aspect using PostSharp</Description>
     <DebugType>Full</DebugType>
-    <PackageReleaseNotes>Updated deps, added static Logger, updated doc</PackageReleaseNotes>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
     <PackageReleaseNotes>moved to Json.Net, embedded icon</PackageReleaseNotes>
     <AssemblyVersion>6.0.1.0</AssemblyVersion>

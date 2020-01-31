@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net20;net45;net471</TargetFrameworks>
-    <Version>4.0.1</Version>
+    <Version>4.0.2</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security TripleDES 3DES</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
+    <PackageIcon>Aleph1.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
     <Company>Aleph1</Company>
@@ -16,7 +16,7 @@
     <Description>Aleph1 Security implementation using the TripleDES algorithm</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
-    <PackageReleaseNotes>updated json</PackageReleaseNotes>
+    <PackageReleaseNotes>updated json + embedded PackageIcon</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,4 +27,8 @@
     <ProjectReference Include="..\Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
 </Project>

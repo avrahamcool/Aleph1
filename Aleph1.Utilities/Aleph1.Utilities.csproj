@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>3.3.0</Version>
+    <Version>3.3.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
+    <PackageIcon>Aleph1.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
     <Company>Aleph1</Company>
@@ -16,11 +16,15 @@
     <Description>Common Utilities for Aleph1 projects</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Utilities.xml</DocumentationFile>
-    <PackageReleaseNotes>Updated licence</PackageReleaseNotes>
+    <PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <Reference Include="System.Web" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
 </Project>
