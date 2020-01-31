@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net20;net45;net471</TargetFrameworks>
-    <Version>4.0.0</Version>
+    <Version>4.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security TripleDES 3DES</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -16,11 +16,11 @@
     <Description>Aleph1 Security implementation using the TripleDES algorithm</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Implementation.3DES.xml</DocumentationFile>
-    <PackageReleaseNotes>Breaking changes: changed they way the ticket are generated. UPDATE WITH CAUTION</PackageReleaseNotes>
+    <PackageReleaseNotes>updated json</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
