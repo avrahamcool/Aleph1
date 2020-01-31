@@ -1,25 +1,25 @@
-﻿using NLog;
+﻿using Newtonsoft.Json;
+
+using NLog;
+
 using PostSharp.Aspects;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web.Script.Serialization;
 
 namespace Aleph1.Logging
 {
     /// <summary>Aspect to handle logging</summary>
     [Serializable, AttributeUsage(AttributeTargets.All, AllowMultiple = false, Inherited = true), LinesOfCodeAvoided(20)]
-    public class LoggedAttribute : OnMethodBoundaryAspect
+    public sealed class LoggedAttribute : OnMethodBoundaryAspect
     {
         /// <summary>Default = true, set to False when you don't want the parameters of the function to be logged</summary>
         public bool LogParameters { get; set; } = true;
 
         /// <summary>Default = false, set to true when you want the return value of the function to be logged</summary>
         public bool LogReturnValue { get; set; } = false;
-
-        [NonSerialized]
-        private JavaScriptSerializer serializer;
 
         [NonSerialized]
         private ILogger logger;
@@ -40,8 +40,6 @@ namespace Aleph1.Logging
         public override void RuntimeInitialize(MethodBase method)
         {
             logger = LogManager.GetLogger(ClassName);
-            if (LogParameters || LogReturnValue)
-                serializer = new JavaScriptSerializer();
         }
 
         /// <summary>Handle the logging of entering a function. depends on LogParameters</summary>
@@ -76,16 +74,16 @@ namespace Aleph1.Logging
             Dictionary<string, object> o = new Dictionary<string, object>();
             for (int i = 0; i < ParameterNames.Length; i++)
                 o.Add(ParameterNames[i], args.Arguments[i]);
-            try { return serializer.Serialize(o); }
-            catch (Exception e) { return $"[Error in Serializing the arguments: {e.Message}]"; }
+            try { return JsonConvert.SerializeObject(o); }
+            catch (JsonSerializationException e) { return $"[Error in Serializing the arguments: {e.Message}]"; }
         }
         private string GetReturnValue(MethodExecutionArgs args)
         {
             if (args.ReturnValue == null)
                 return "null";
 
-            try { return serializer.Serialize(args.ReturnValue); }
-            catch (Exception e) { return $"[Error in Serializing the return value: {e.Message} ---ReturnValue.ToString: {args.ReturnValue.ToString()}]"; }
+            try { return JsonConvert.SerializeObject(args.ReturnValue); }
+            catch (JsonSerializationException e) { return $"[Error in Serializing the return value: {e.Message} ---ReturnValue.ToString: {args.ReturnValue.ToString()}]"; }
         }
     }
 }

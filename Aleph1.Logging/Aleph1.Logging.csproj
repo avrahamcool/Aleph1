@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>5.1.1</Version>
+    <Version>6.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
+    <PackageIcon>Aleph1.png</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
     <Company>Aleph1</Company>
@@ -17,12 +17,15 @@
     <DebugType>Full</DebugType>
     <PackageReleaseNotes>Updated deps, added static Logger, updated doc</PackageReleaseNotes>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
-    <PackageReleaseNotes>fixed logging class name</PackageReleaseNotes>
+    <PackageReleaseNotes>moved to Json.Net, embedded icon</PackageReleaseNotes>
+    <AssemblyVersion>6.0.1.0</AssemblyVersion>
+    <FileVersion>6.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NLog" Version="4.6.6" />
-    <PackageReference Include="PostSharp" Version="6.2.9" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NLog" Version="4.6.8" />
+    <PackageReference Include="PostSharp" Version="6.4.6" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,4 +36,8 @@
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+  
 </Project>
