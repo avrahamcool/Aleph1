@@ -3,19 +3,19 @@ namespace System.Runtime.CompilerServices
 {
     /// <summary></summary>
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-    public class CallerMemberNameAttribute : Attribute
+    public sealed class CallerMemberNameAttribute : Attribute
     {
     }
     
     /// <summary></summary>
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-    public class CallerFilePathAttribute : Attribute
+    public sealed class CallerFilePathAttribute : Attribute
     {
     }
 
     /// <summary></summary>
     [AttributeUsage(AttributeTargets.Parameter, AllowMultiple = false, Inherited = false)]
-    public class CallerLineNumberAttribute : Attribute
+    public sealed class CallerLineNumberAttribute : Attribute
     {
     }
 }

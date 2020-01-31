@@ -16,7 +16,9 @@
         /// <summary>the MIME type of the file.</summary>
         public string Type { get; set; }
 
+
         /// <summary>the file itself.</summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1819:Properties should not return arrays", Justification = "DTO")]
         public byte[] Content { get; set; }
     }
 }

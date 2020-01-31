@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net20;netstandard1.0</TargetFrameworks>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 ClientFile</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/avrahamcool/Aleph1/master/Aleph1.png</PackageIconUrl>
@@ -16,7 +16,7 @@
     <Description>ClientFile Model for easy file uploading via JSON POST directly from the client</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.ClientFile.Models.xml</DocumentationFile>
-    <PackageReleaseNotes>Make fields public set, and restored the default ctor</PackageReleaseNotes>
+    <PackageReleaseNotes>fixed compiler warnings</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>

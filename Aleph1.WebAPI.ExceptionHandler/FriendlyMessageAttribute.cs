@@ -5,7 +5,7 @@ namespace Aleph1.WebAPI.ExceptionHandler
 {
     /// <summary>Let the Actions use a friendly message</summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
-    public class FriendlyMessageAttribute : ExceptionFilterAttribute
+    public sealed class FriendlyMessageAttribute : ExceptionFilterAttribute
     {
         /// <summary>The message to show for the client</summary>
         public string FriendlyMessage { get; set; }
