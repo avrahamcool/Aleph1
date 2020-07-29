@@ -15,32 +15,30 @@ namespace Aleph1.Security.Tests
     {
         private readonly ICipher cipher = new Implementation.RijndaelManagedCipher.RijndaelManagedCipher();
         private readonly string secret = "My special secret - hello world";
+        private readonly string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
+        private readonly string userUniqueID = "127.0.0.0";
+        private readonly string wrongAppPrefix = "{4EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
+        private readonly string wrongUserUniqueID = "127.1.0.0";
 
         [TestMethod]
-        public void Decryped_RightApp_RightClient_RightTime_Should_Work()
+        public void Decrypd_RightApp_RightClient_RightTime_Should_Work()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret, TimeSpan.FromMinutes(1));
 
             Assert.AreEqual(secret, cipher.Decrypt<string>(appPrefix, userUniqueID, ticket));
         }
 
         [TestMethod]
-        public void Decryped_RightApp_RightClient_UnlimitedTime_Should_Work()
+        public void Decrypd_RightApp_RightClient_UnlimitedTime_Should_Work()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret);
 
             Assert.AreEqual(secret, cipher.Decrypt<string>(appPrefix, userUniqueID, ticket));
         }
 
         [TestMethod]
-        public void Decryped_RightApp_RightClient_WrongTime_Should_Fail()
+        public void Decrypd_RightApp_RightClient_WrongTime_Should_Fail()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret, TimeSpan.FromMilliseconds(15));
             Thread.Sleep(30);
 
@@ -48,41 +46,37 @@ namespace Aleph1.Security.Tests
         }
 
         [TestMethod]
-        public void Decryped_RightApp_WrongClient_Should_Fail()
+        public void Decrypd_RightApp_WrongClient_Should_Fail()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
-            string wrongUserUniqueID = "127.1.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret);
 
             Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(appPrefix, wrongUserUniqueID, ticket));
         }
 
         [TestMethod]
-        public void Decryped_WrongtApp_Should_Fail()
+        public void Decrypd_WrongtApp_Should_Fail()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string wrongAppPrefix = "{4EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret);
 
             Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(wrongAppPrefix, userUniqueID, ticket));
         }
 
         [TestMethod]
-        public void Decryped_NullsAndEmptyStrings()
+        public void Decrypd_NullsAndEmptyStrings()
         {
-            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt("", "", secret));
-            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt(null, "", secret));
-            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt("", null, secret));
-            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt(null, null, secret));
+            string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret);
+
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>("", "", ticket));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(null, "", ticket));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>("", null, ticket));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(null, null, ticket));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(appPrefix, userUniqueID, ""));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(appPrefix, userUniqueID, null));
         }
 
         [TestMethod]
-        public void Decryped_ChangingOneLetter_Should_Fail()
+        public void Decrypd_ChangingOneLetter_Should_Fail()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket = cipher.Encrypt(appPrefix, userUniqueID, secret);
 
             string someChar = ticket[ticket.Length / 2] == 'a' ? "b" : "a";
@@ -91,11 +85,25 @@ namespace Aleph1.Security.Tests
             Assert.ThrowsException<CryptographicException>(() => cipher.Decrypt<string>(appPrefix, userUniqueID, wrongTicket));
         }
 
+
+        [TestMethod]
+        public void Encrypt_NullsAndEmptyStrings()
+        {
+            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt("", "", secret));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt(null, "", secret));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt("", null, secret));
+            Assert.ThrowsException<CryptographicException>(() => cipher.Encrypt(null, null, secret));
+
+            string emptyStringCipher = cipher.Encrypt(appPrefix, userUniqueID, "");
+            Assert.AreEqual("", cipher.Decrypt<string>(appPrefix, userUniqueID, emptyStringCipher));
+
+            string nullCipher = cipher.Encrypt<string>(appPrefix, userUniqueID, null);
+            Assert.IsNull(cipher.Decrypt<string>(appPrefix, userUniqueID, nullCipher));
+        }
+
         [TestMethod]
         public void Encrypt_DifferentTimes_ShouldResultInBigVariant()
         {
-            string appPrefix = "{3EE06365-D5E3-4D2E-A8D0-1F6E10138D29}";
-            string userUniqueID = "127.0.0.0";
             string ticket1 = cipher.Encrypt(appPrefix, userUniqueID, secret, TimeSpan.FromMinutes(1));
             string ticket2 = cipher.Encrypt(appPrefix, userUniqueID, secret, TimeSpan.FromMinutes(15));
             int distance = Levenshtein.Distance(ticket1, ticket2);

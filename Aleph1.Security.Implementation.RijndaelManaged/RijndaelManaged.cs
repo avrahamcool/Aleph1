@@ -69,6 +69,11 @@ namespace Aleph1.Security.Implementation.RijndaelManagedCipher
         /// <returns>the decrypted data</returns>
         public T Decrypt<T>(string appPrefix, string userUniqueID, string encryptedData)
         {
+            if (string.IsNullOrWhiteSpace(appPrefix) || string.IsNullOrWhiteSpace(userUniqueID) || string.IsNullOrWhiteSpace(encryptedData))
+            {
+                throw new CryptographicException("empty appPrefix or userUniqueID or encryptedData");
+            }
+
             string passPhrase = appPrefix + userUniqueID;
 
             // Get the complete stream of bytes that represent:

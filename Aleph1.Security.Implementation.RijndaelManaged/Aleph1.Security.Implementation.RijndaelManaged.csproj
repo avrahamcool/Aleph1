@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 Security RijndaelManaged</PackageTags>
     <PackageIcon>Aleph1.png</PackageIcon>
@@ -16,6 +16,7 @@
     <Description>Aleph1 Security implementation using the RijndaelManaged algorithm</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Implementation.RijndaelManaged.xml</DocumentationFile>
+    <PackageReleaseNotes>Throws exceptions when decrypting empty strings or null.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
