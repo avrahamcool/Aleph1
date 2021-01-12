@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>4.0.0</Version>
+    <Version>4.0.1</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
