@@ -13,14 +13,29 @@ namespace Aleph1.DI.Contracts
         /// <summary>uses MEF to load all the IModule implementations to the Registrar</summary>
         /// <param name="registrar">IModuleRegistrar</param>
         /// <param name="rootPath">path to the root directory of the project</param>
-        /// <param name="assemblies">relative path to the DLL to load.</param>
-        public static void LoadModulesFromAssemblies(IModuleRegistrar registrar, string rootPath, string[] assemblies)
+        /// <param name="modulesDir">relative path to the modules directory</param>
+        /// <param name="assemblies">names the DLLs to load</param>
+        public static void LoadModulesFromAssemblies(IModuleRegistrar registrar, string rootPath, string modulesDir, string[] assemblies)
         {
             Uri baseUri = new Uri(rootPath);
-            List<string> assembliesPath = assemblies.Select(ass => new Uri(baseUri, ass).LocalPath).ToList();
+
+            AppDomain.CurrentDomain.AssemblyResolve += (object sender, ResolveEventArgs args) =>
+            {
+                string assemblyPartialName = args.Name.Substring(0, args.Name.IndexOf(',')) + ".dll";
+                string assemblyPartialPath = Path.Combine(modulesDir, assemblyPartialName);
+                string assemblyFullPath = new Uri(baseUri, assemblyPartialPath).LocalPath;
+
+                return Assembly.LoadFile(assemblyFullPath);
+            };
+
+            List<string> assembliesPath = assemblies
+                .Select(assName => Path.Combine(modulesDir, assName))
+                .Select(assPath => new Uri(baseUri, assPath).LocalPath).ToList();
             string badPath = assembliesPath.FirstOrDefault(ap => !File.Exists(ap));
             if (badPath != null)
+            {
                 throw new Exception($"Could not load {badPath}. Current EXE Dir: {rootPath}. Current BaseUri {baseUri}");
+            }
 
             try
             {
@@ -30,12 +45,14 @@ namespace Aleph1.DI.Contracts
                 {
                     //Get all the modules and register them
                     foreach (IModule module in compositionContainer.GetExports<IModule>().Select(e => e.Value))
+                    {
                         module.Initialize(registrar);
+                    }
                 }
             }
             catch (ReflectionTypeLoadException rtle)
             {
-                throw new Exception(String.Join(Environment.NewLine, rtle.LoaderExceptions.Select(e => e.ToString())));
+                throw new Exception(string.Join(Environment.NewLine, rtle.LoaderExceptions.Select(e => e.ToString())));
             }
         }
     }
