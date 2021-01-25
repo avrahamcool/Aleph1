@@ -25,7 +25,7 @@ namespace Aleph1.DI.Contracts
                 string assemblyPartialPath = Path.Combine(modulesDir, assemblyPartialName);
                 string assemblyFullPath = new Uri(baseUri, assemblyPartialPath).LocalPath;
 
-                return Assembly.LoadFile(assemblyFullPath);
+                return File.Exists(assemblyFullPath) ? Assembly.LoadFile(assemblyFullPath) : null;
             };
 
             List<string> assembliesPath = assemblies
