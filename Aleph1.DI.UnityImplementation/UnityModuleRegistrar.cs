@@ -1,4 +1,5 @@
 ﻿using Aleph1.DI.Contracts;
+
 using Unity;
 using Unity.Lifetime;
 
@@ -13,35 +14,56 @@ namespace Aleph1.DI.UnityImplementation
         /// <param name="container">The Unity container.</param>
         public UnityModuleRegistrar(IUnityContainer container)
         {
-            this._container = container;
+            _container = container;
         }
 
-        /// <summary>
-        /// register a transient type mapping between a concrete type to an Interface
-        /// </summary>
-        /// <typeparam name="TFrom">concrete type implementation</typeparam>
-        /// <typeparam name="TTo">Interface</typeparam>
+        /// <summary>register a transient type mapping between a concrete type to an Interface</summary>
+        /// <typeparam name="TFrom">Interface</typeparam>
+        /// <typeparam name="TTo">concrete type implementation</typeparam>
         /// <param name="name">name to use for Named Registration, use null for default</param>
         public void RegisterType<TFrom, TTo>(string name = null) where TTo : TFrom
         {
             if(name == null)
-                this._container.RegisterType<TFrom, TTo>();
+            {
+                _container.RegisterType<TFrom, TTo>();
+            }
             else
-                this._container.RegisterType<TFrom, TTo>(name);
+            {
+                _container.RegisterType<TFrom, TTo>(name);
+            }
         }
 
-        /// <summary>
-        /// register a singleton type mapping between a concrete type to a Interface
-        /// </summary>
-        /// <typeparam name="TFrom">concrete type implementation</typeparam>
-        /// <typeparam name="TTo">Interface</typeparam>
+        /// <summary>register a singleton type mapping between a concrete type to a Interface</summary>
+        /// <typeparam name="TFrom">Interface</typeparam>
+        /// <typeparam name="TTo">concrete type implementation</typeparam>
         /// <param name="name">name to use for Named Registration, use null for default</param>
         public void RegisterTypeAsSingelton<TFrom, TTo>(string name = null) where TTo : TFrom
         {
             if (name == null)
-                this._container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
+            {
+                _container.RegisterType<TFrom, TTo>(new ContainerControlledLifetimeManager());
+            }
             else
-                this._container.RegisterType<TFrom, TTo>(name, new ContainerControlledLifetimeManager());
+            {
+                _container.RegisterType<TFrom, TTo>(name, new ContainerControlledLifetimeManager());
+            }
+        }
+
+        /// <summary>register a singleton type mapping between a concrete instance to a Interface</summary>
+        /// <typeparam name="TFrom">Interface</typeparam>
+        /// <typeparam name="TTo">concrete instance implementation</typeparam>
+        /// <param name="instance">concrete instance implementation</param>
+        /// <param name="name">name to use for Named Registration, use null for default</param>
+        public void RegisterTypeAsSingelton<TFrom, TTo>(TTo instance, string name = null) where TTo : TFrom
+        {
+            if (name == null)
+            {
+                _container.RegisterInstance<TFrom>(instance, new ContainerControlledLifetimeManager());
+            }
+            else
+            {
+                _container.RegisterInstance<TFrom>(name, instance, new ContainerControlledLifetimeManager());
+            }
         }
     }
 }

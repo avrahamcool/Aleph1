@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.3.2</Version>
+    <Version>3.4.0</Version>
     <Authors>Avraham Essoudry</Authors>
     <PackageTags>Aleph1 DI</PackageTags>
     <PackageIcon>Aleph1.png</PackageIcon>
@@ -16,7 +16,7 @@
     <Description>Concrete Implementation of Aleph1.DI using Unity</Description>
     <DebugType>Full</DebugType>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
-    <PackageReleaseNotes>updated Unity</PackageReleaseNotes>
+    <PackageReleaseNotes>added instance registration</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
