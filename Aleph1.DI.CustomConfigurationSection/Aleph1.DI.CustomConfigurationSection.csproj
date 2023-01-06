@@ -15,7 +15,7 @@
 		<RepositoryType>git</RepositoryType>
 		<Copyright>Copyright Aleph1 © 2018</Copyright>
 		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-		<Description>Custom Configuration Section to facilitate Aleph1.DI config</Description>
+		<Description>Custom Configuration Section to facilitate Aleph1.DI configuration</Description>
 		<DebugType>Full</DebugType>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.CustomConfigurationSection.xml</DocumentationFile>
 		<PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>

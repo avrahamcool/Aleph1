@@ -19,6 +19,7 @@
 		<DebugType>Full</DebugType>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
 		<PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
 	<ItemGroup>

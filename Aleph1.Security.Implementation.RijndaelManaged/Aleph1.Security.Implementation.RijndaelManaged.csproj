@@ -19,6 +19,7 @@
 		<DebugType>Full</DebugType>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Implementation.RijndaelManaged.xml</DocumentationFile>
 		<PackageReleaseNotes>Throws exceptions when decrypting empty strings or null.</PackageReleaseNotes>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
 

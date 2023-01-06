@@ -19,6 +19,7 @@
 		<DebugType>Full</DebugType>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.ClientFile.Models.xml</DocumentationFile>
 		<PackageReleaseNotes>fixed compiler warnings + embedded PackageIcon</PackageReleaseNotes>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
 	<ItemGroup>
