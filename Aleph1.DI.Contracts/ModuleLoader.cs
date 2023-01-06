@@ -21,11 +21,15 @@ namespace Aleph1.DI.Contracts
 
 			AppDomain.CurrentDomain.AssemblyResolve += (object sender, ResolveEventArgs args) =>
 			{
-				string assemblyPartialName = args.Name.Substring(0, args.Name.IndexOf(',')) + ".dll";
-				string assemblyPartialPath = Path.Combine(modulesDir, assemblyPartialName);
+				string assemblyPartialName = args.Name.Substring(0, args.Name.IndexOf(','));
+				if (assemblyPartialName.EndsWith(".resources"))
+				{
+					return null;
+				}
+				string assemblyPartialPath = Path.Combine(modulesDir, assemblyPartialName + ".dll");
 				string assemblyFullPath = new Uri(baseUri, assemblyPartialPath).LocalPath;
 
-				return File.Exists(assemblyFullPath) ? Assembly.LoadFile(assemblyFullPath) : null;
+				return Assembly.LoadFile(assemblyFullPath);
 			};
 
 			List<string> assembliesPath = assemblies
