@@ -1,26 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net20;net45;net471</TargetFrameworks>
-    <Version>3.3.1</Version>
-    <Authors>Avraham Essoudry</Authors>
-    <PackageTags>Aleph1 Security Contracts</PackageTags>
-    <PackageIcon>Aleph1.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
-    <Company>Aleph1</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 © 2018</Copyright>
-    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-    <Description>Contracts for Aleph1.Security</Description>
-    <DebugType>Full</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
-    <PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<Version>4.8.0</Version>
+		<AssemblyVersion>4.8.0.0</AssemblyVersion>
+		<FileVersion>4.8.0.0</FileVersion>
+		<Authors>Avraham Essoudry</Authors>
+		<PackageTags>Aleph1 Security Contracts</PackageTags>
+		<PackageIcon>Aleph1.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+		<Company>Aleph1</Company>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright Aleph1 © 2018</Copyright>
+		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+		<Description>Contracts for Aleph1.Security</Description>
+		<DebugType>Full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Security.Contracts.xml</DocumentationFile>
+		<PackageReleaseNotes>embedded PackageIcon</PackageReleaseNotes>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-  
+	<ItemGroup>
+		<None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
 </Project>

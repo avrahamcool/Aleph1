@@ -1,29 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>4.1.1</Version>
-    <Authors>Avraham Essoudry</Authors>
-    <PackageTags>Aleph1 DI</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
-    <Company>Aleph1</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 © 2018</Copyright>
-    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-    <Description>Provides the necessary code to register components into the DI container</Description>
-    <DebugType>Full</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
-    <PackageReleaseNotes>better fix for dynamic loading</PackageReleaseNotes>
-    <PackageIcon>Aleph1.png</PackageIcon>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<Version>4.8.0</Version>
+		<AssemblyVersion>4.8.0.0</AssemblyVersion>
+		<FileVersion>4.8.0.0</FileVersion>
+		<Authors>Avraham Essoudry</Authors>
+		<PackageTags>Aleph1 DI</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+		<Company>Aleph1</Company>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright Aleph1 © 2018</Copyright>
+		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+		<Description>Provides the necessary code to register components into the DI container</Description>
+		<DebugType>Full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.Contracts.xml</DocumentationFile>
+		<PackageReleaseNotes>better fix for dynamic loading</PackageReleaseNotes>
+		<PackageIcon>Aleph1.png</PackageIcon>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.Composition" />
-  </ItemGroup>
+	<ItemGroup>
+		<Reference Include="System.ComponentModel.Composition" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.CLSCompliantAttribute">
+			<_Parameter1>true</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 </Project>

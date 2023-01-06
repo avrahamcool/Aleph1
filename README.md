@@ -35,18 +35,14 @@ ILogger logger = LogManager.GetCurrentClassLogger();
 logger.LogAleph1(LogLevel.Info, "message");
 ```
 
-### 3. Aleph1.WebAPI.ExceptionHandler
-* #### Aleph1.WebAPI.ExceptionHandler
-adding a [FriendlyMessage] aspect for handling WebApi exception in a granular way.
-
-### 4. Aleph1.Security
+### 3. Aleph1.Security
 * #### Aleph1.Security.Contracts
 a common interface for the custom Security handler used by Aleph1 projects
 
 * #### Aleph1.Security.Implementation.3DES
 a concrete implementation of the Security interface using 3DES
 
-### 5. Aleph1.ClientFile
+### 4. Aleph1.ClientFile
 * #### Aleph1.ClientFile.Models
 ClientFile Model for easy file uploading via JSON POST directly from the client.
 Should be use with [aleph1-client-file](https://github.com/avrahamcool/aleph1-client-file)

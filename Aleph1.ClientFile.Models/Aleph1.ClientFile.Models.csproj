@@ -1,25 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net20;netstandard1.0</TargetFrameworks>
-    <Version>1.0.3</Version>
-    <Authors>Avraham Essoudry</Authors>
-    <PackageTags>Aleph1 ClientFile</PackageTags>
-    <PackageIcon>Aleph1.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
-    <Company>Aleph1</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 © 2019</Copyright>
-    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-    <Description>ClientFile Model for easy file uploading via JSON POST directly from the client</Description>
-    <DebugType>Full</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.ClientFile.Models.xml</DocumentationFile>
-    <PackageReleaseNotes>fixed compiler warnings + embedded PackageIcon</PackageReleaseNotes>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<Version>4.8.0</Version>
+		<AssemblyVersion>4.8.0.0</AssemblyVersion>
+		<FileVersion>4.8.0.0</FileVersion>
+		<Authors>Avraham Essoudry</Authors>
+		<PackageTags>Aleph1 ClientFile</PackageTags>
+		<PackageIcon>Aleph1.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+		<Company>Aleph1</Company>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright Aleph1 © 2019</Copyright>
+		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+		<Description>ClientFile Model for easy file uploading via JSON POST directly from the client</Description>
+		<DebugType>Full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.ClientFile.Models.xml</DocumentationFile>
+		<PackageReleaseNotes>fixed compiler warnings + embedded PackageIcon</PackageReleaseNotes>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+	</ItemGroup>
 </Project>
