@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.ClientFile.Models", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Implementation.RijndaelManaged", "Aleph1.Security.Implementation.RijndaelManaged\Aleph1.Security.Implementation.RijndaelManaged.csproj", "{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging.Tester", "Aleph1.Logging.Tester\Aleph1.Logging.Tester.csproj", "{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +108,7 @@ Global
 		{E38043E5-9CDA-450D-947D-02CB431CD015} = {84434352-B4A2-432B-A96E-F8652306342B}
 		{B4AB612C-FE17-474D-B442-B9ADFFE724A8} = {21589C2D-A85E-4066-B0C1-BE6503423BC9}
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4} = {84434352-B4A2-432B-A96E-F8652306342B}
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {528F5B2B-5A72-400F-A5C0-FF33FAF8E163}

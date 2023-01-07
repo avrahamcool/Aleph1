@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -46,38 +47,58 @@ namespace Aleph1.Logging
 		/// <param name="args"></param>
 		public sealed override void OnEntry(MethodExecutionArgs args)
 		{
-			args.MethodExecutionTag = Guid.NewGuid();
-			string message = LogParameters ? $"Entering with parameters: {GetArguments(args)}" : "Entering";
-			logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
+			if (!logger.IsTraceEnabled)
+			{
+				return;
+			}
+
+			args.MethodExecutionTag = Stopwatch.StartNew();
 		}
 
 		/// <summary>Handle the logging of exiting a function. depends on LogReturnValue</summary>
 		/// <param name="args"></param>
 		public sealed override void OnExit(MethodExecutionArgs args)
 		{
-			string message = LogReturnValue ? $"Leaving with result: {GetReturnValue(args)}" : "Leaving";
-			logger.LogAleph1(LogLevel.Trace, message, null, args.MethodExecutionTag, ClassName, MethodName);
+			if (!logger.IsTraceEnabled || args.Exception != null)
+			{
+				return;
+			}
+
+			Stopwatch watch = args.MethodExecutionTag as Stopwatch;
+			watch.Stop();
+
+			string parameters = LogParameters ? GetParameters(args, ParameterNames) : null;
+			string returnValue = LogReturnValue ? GetReturnValue(args) : null;
+
+			logger.LogAleph1(LogLevel.Trace, null, null, watch.ElapsedMilliseconds,
+				parameters, returnValue, ClassName, MethodName);
 		}
 
 		/// <summary>Handle the logging of an error in a function</summary>
 		/// <param name="args"></param>
 		public sealed override void OnException(MethodExecutionArgs args)
 		{
-			logger.LogAleph1(LogLevel.Error, $"parameters: {GetArguments(args)}", args.Exception, args.MethodExecutionTag, ClassName, MethodName);
+			if (!logger.IsErrorEnabled)
+			{
+				return;
+			}
+
+			string parameters = LogParameters ? GetParameters(args, ParameterNames) : null;
+
+			logger.LogAleph1(LogLevel.Error, args.Exception.Message, args.Exception, 0,
+				parameters, null, ClassName, MethodName);
 		}
 
-		private string GetArguments(MethodExecutionArgs args)
+		private static string GetParameters(MethodExecutionArgs args, string[] parameterNames)
 		{
-			if (ParameterNames.Length == 0)
+			if (parameterNames.Length == 0)
 			{
-				return "null";
+				return null;
 			}
 
-			Dictionary<string, object> o = new Dictionary<string, object>();
-			for (int i = 0; i < ParameterNames.Length; i++)
-			{
-				o.Add(ParameterNames[i], args.Arguments[i]);
-			}
+			Dictionary<string, object> o = parameterNames
+				.Zip(args.Arguments, (name, value) => (name, value))
+				.ToDictionary(kvp => kvp.name, kvp => kvp.value);
 
 			try { return JsonConvert.SerializeObject(o); }
 			catch (JsonSerializationException e) { return $"[Error in Serializing the arguments: {e.Message}]"; }
@@ -86,7 +107,7 @@ namespace Aleph1.Logging
 		{
 			if (args.ReturnValue == null)
 			{
-				return "null";
+				return null;
 			}
 
 			try { return JsonConvert.SerializeObject(args.ReturnValue); }
