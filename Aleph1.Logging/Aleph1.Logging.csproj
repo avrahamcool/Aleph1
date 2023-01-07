@@ -1,42 +1,49 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net40;net45;net471</TargetFrameworks>
-    <Version>6.0.1</Version>
-    <Authors>Avraham Essoudry</Authors>
-    <PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
-    <PackageIcon>Aleph1.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
-    <Company>Aleph1</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 © 2018</Copyright>
-    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-    <Description>Logging aspect using PostSharp</Description>
-    <DebugType>Full</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
-    <PackageReleaseNotes>moved to Json.Net, embedded icon</PackageReleaseNotes>
-    <AssemblyVersion>6.0.1.0</AssemblyVersion>
-    <FileVersion>6.0.1.0</FileVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<Version>7.0.0</Version>
+		<AssemblyVersion>7.0.0.0</AssemblyVersion>
+		<FileVersion>7.0.0.0</FileVersion>
+		<Authors>Avraham Essoudry</Authors>
+		<PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
+		<PackageIcon>Aleph1.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+		<Company>Aleph1</Company>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright Aleph1 © 2018</Copyright>
+		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+		<Description>Logging aspect using PostSharp</Description>
+		<DebugType>Full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
+		<PackageReleaseNotes>improved layout and logging. (breaking changes)</PackageReleaseNotes>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="NLog" Version="4.6.8" />
-    <PackageReference Include="PostSharp" Version="6.9.7" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Aleph1.Utilities\Aleph1.Utilities.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+		<PackageReference Include="NLog" Version="5.1.1" />
+		<PackageReference Include="PostSharp" Version="6.10.16" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="System.Web.Extensions" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Aleph1.Utilities\Aleph1.Utilities.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-  
+	<ItemGroup>
+		<Reference Include="System.Web.Extensions" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.CLSCompliantAttribute">
+			<_Parameter1>false</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 </Project>

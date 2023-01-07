@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29020.237
+VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E736B54E-3F6A-4B4F-AE7F-CEC89B50759A}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Aleph1.Utilities", "1. A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{1408A32E-D513-4E65-88F2-A8A5BC5C203B}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		README.md = README.md
@@ -21,11 +22,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".solution", ".solution", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. Aleph1.DI", "0. Aleph1.DI", "{B6A902AE-3492-4363-AFC3-539DF6713B2B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Aleph1.WebAPI.ExceptionHandler", "3. Aleph1.WebAPI.ExceptionHandler", "{12B7D42B-619B-46C7-AD97-64C244698F03}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Aleph1.Logging", "2. Aleph1.Logging", "{DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Aleph1.Security", "4. Aleph1.Security", "{84434352-B4A2-432B-A96E-F8652306342B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Aleph1.Security", "3. Aleph1.Security", "{84434352-B4A2-432B-A96E-F8652306342B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.DI.Contracts", "Aleph1.DI.Contracts\Aleph1.DI.Contracts.csproj", "{F9DCAC9C-4063-4836-9975-7AAC60CEAE69}"
 EndProject
@@ -35,21 +34,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.DI.UnityImplementati
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Utilities", "Aleph1.Utilities\Aleph1.Utilities.csproj", "{F9E30980-269F-4021-8880-871C856C8349}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.WebAPI.ExceptionHandler", "Aleph1.WebAPI.ExceptionHandler\Aleph1.WebAPI.ExceptionHandler.csproj", "{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Contracts", "Aleph1.Security.Contracts\Aleph1.Security.Contracts.csproj", "{3B055DBE-7E97-46C2-968C-382694377882}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Implementation.3DES", "Aleph1.Security.Implementation.3DES\Aleph1.Security.Implementation.3DES.csproj", "{C1E516CA-A48D-4446-B535-CA60CF22B6F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Logging", "Aleph1.Logging\Aleph1.Logging.csproj", "{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Tests", "Aleph1.Security.Tests\Aleph1.Security.Tests.csproj", "{E38043E5-9CDA-450D-947D-02CB431CD015}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Aleph1.ClientFile", "5. Aleph1.ClientFile", "{21589C2D-A85E-4066-B0C1-BE6503423BC9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Aleph1.ClientFile", "4. Aleph1.ClientFile", "{21589C2D-A85E-4066-B0C1-BE6503423BC9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.ClientFile.Models", "Aleph1.ClientFile.Models\Aleph1.ClientFile.Models.csproj", "{B4AB612C-FE17-474D-B442-B9ADFFE724A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Security.Implementation.RijndaelManaged", "Aleph1.Security.Implementation.RijndaelManaged\Aleph1.Security.Implementation.RijndaelManaged.csproj", "{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aleph1.Security.Implementation.RijndaelManaged", "Aleph1.Security.Implementation.RijndaelManaged\Aleph1.Security.Implementation.RijndaelManaged.csproj", "{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aleph1.Logging.Tester", "Aleph1.Logging.Tester\Aleph1.Logging.Tester.csproj", "{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,18 +70,10 @@ Global
 		{F9E30980-269F-4021-8880-871C856C8349}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9E30980-269F-4021-8880-871C856C8349}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9E30980-269F-4021-8880-871C856C8349}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B055DBE-7E97-46C2-968C-382694377882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3B055DBE-7E97-46C2-968C-382694377882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B055DBE-7E97-46C2-968C-382694377882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B055DBE-7E97-46C2-968C-382694377882}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1E516CA-A48D-4446-B535-CA60CF22B6F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51EA994D-1D45-420C-81D4-2C7B8F2BFC54}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -101,6 +90,10 @@ Global
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,13 +103,12 @@ Global
 		{4A79B0A7-55B0-4F84-8355-C2D5BA7EE7BF} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{714E1B8F-9991-43B7-8903-9F6321B89D6F} = {B6A902AE-3492-4363-AFC3-539DF6713B2B}
 		{F9E30980-269F-4021-8880-871C856C8349} = {ACD6CF11-DFDB-4AAB-93D5-6645C38917B2}
-		{A8F5C501-7CFA-4A43-9DB8-432E444DDC48} = {12B7D42B-619B-46C7-AD97-64C244698F03}
 		{3B055DBE-7E97-46C2-968C-382694377882} = {84434352-B4A2-432B-A96E-F8652306342B}
-		{C1E516CA-A48D-4446-B535-CA60CF22B6F9} = {84434352-B4A2-432B-A96E-F8652306342B}
 		{51EA994D-1D45-420C-81D4-2C7B8F2BFC54} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
 		{E38043E5-9CDA-450D-947D-02CB431CD015} = {84434352-B4A2-432B-A96E-F8652306342B}
 		{B4AB612C-FE17-474D-B442-B9ADFFE724A8} = {21589C2D-A85E-4066-B0C1-BE6503423BC9}
 		{B4B99FDE-C818-4692-9E5C-EDB28B0882C4} = {84434352-B4A2-432B-A96E-F8652306342B}
+		{22BACAF0-1303-49AC-B68C-EDF2A10E73F3} = {DAEF5E87-1B4E-4DC4-A552-2B94F1313E0C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {528F5B2B-5A72-400F-A5C0-FF33FAF8E163}

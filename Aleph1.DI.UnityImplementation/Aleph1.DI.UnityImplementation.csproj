@@ -1,34 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net45;net471</TargetFrameworks>
-    <Version>3.4.0</Version>
-    <Authors>Avraham Essoudry</Authors>
-    <PackageTags>Aleph1 DI</PackageTags>
-    <PackageIcon>Aleph1.png</PackageIcon>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
-    <Company>Aleph1</Company>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryType>git</RepositoryType>
-    <Copyright>Copyright Aleph1 © 2018</Copyright>
-    <RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
-    <Description>Concrete Implementation of Aleph1.DI using Unity</Description>
-    <DebugType>Full</DebugType>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
-    <PackageReleaseNotes>added instance registration</PackageReleaseNotes>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48</TargetFrameworks>
+		<Version>4.8.0</Version>
+		<AssemblyVersion>4.8.0.0</AssemblyVersion>
+		<FileVersion>4.8.0.0</FileVersion>
+		<Authors>Avraham Essoudry</Authors>
+		<PackageTags>Aleph1 DI</PackageTags>
+		<PackageIcon>Aleph1.png</PackageIcon>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/avrahamcool/Aleph1</PackageProjectUrl>
+		<Company>Aleph1</Company>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<RepositoryType>git</RepositoryType>
+		<Copyright>Copyright Aleph1 © 2018</Copyright>
+		<RepositoryUrl>https://github.com/avrahamcool/Aleph1.git</RepositoryUrl>
+		<Description>Concrete Implementation of Aleph1.DI using Unity</Description>
+		<DebugType>Full</DebugType>
+		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.DI.UnityImplementation.xml</DocumentationFile>
+		<PackageReleaseNotes>added instance registration</PackageReleaseNotes>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Unity.Container" Version="5.11.5" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Unity.Container" Version="5.11.11" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Aleph1.DI.Contracts\Aleph1.DI.Contracts.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Aleph1.DI.Contracts\Aleph1.DI.Contracts.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\Aleph1.png" Pack="true" PackagePath="" />
-  </ItemGroup>
-  
+	<ItemGroup>
+		<None Include="..\Aleph1.png" Pack="true" PackagePath="" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<AssemblyAttribute Include="System.CLSCompliantAttribute">
+			<_Parameter1>true</_Parameter1>
+		</AssemblyAttribute>
+	</ItemGroup>
 </Project>
