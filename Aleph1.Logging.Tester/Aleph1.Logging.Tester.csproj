@@ -64,7 +64,7 @@
       <Version>5.1.1</Version>
     </PackageReference>
     <PackageReference Include="PostSharp">
-      <Version>6.10.16</Version>
+      <Version>2023.0.4</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
