@@ -1,31 +1,30 @@
 ﻿using System;
-using System.Threading;
 
 namespace Aleph1.Logging.Tester
 {
 	internal class Program
 	{
+		[Logged]
 		private static void Main(string[] args)
 		{
-			GoodFunction("avraham", 5);
-			try
-			{
-				BadFunction("avraham", 5);
-			}
-			catch (Exception) { }
+			System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+			System.Threading.Thread.CurrentThread.CurrentUICulture = System.Globalization.CultureInfo.InvariantCulture;
+
+			SomeFunction("I'm happy", false, 50);
+			SomeFunction("I'm sad", true, 50);
+			SomeFunction("I'm happy again - will never reach", false, 50);
 		}
 
 		[Logged(LogReturnValue = true)]
-		private static string GoodFunction(string name, int age)
+		private static string SomeFunction(string someString, bool shouldThrow, int delay)
 		{
-			Thread.Sleep(2450);
-			return $"{name} is: {age} years old, yeah.";
-		}
+			if (shouldThrow)
+			{
+				throw new NotImplementedException("Look at inner", new Exception("surprise"));
+			}
 
-		[Logged]
-		private static string BadFunction(string name, int age)
-		{
-			throw new NotImplementedException();
+			System.Threading.Thread.Sleep(delay);
+			return someString;
 		}
 	}
 }

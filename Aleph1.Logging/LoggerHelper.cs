@@ -41,6 +41,7 @@ namespace Aleph1.Logging
 			lei.Properties.Add("A1_ElapsedMilliseconds", elapsedMilliseconds);
 			lei.Properties.Add("A1_Parameters", parameters);
 			lei.Properties.Add("A1_ReturnValue", returnValue);
+			lei.Properties.Add("A1_Exception", exception?.ToString());
 
 			lei.Exception = exception;
 
