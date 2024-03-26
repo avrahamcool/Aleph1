@@ -5,7 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 
-namespace Aleph1.DI.Contracts
+using Aleph1.DI.Contracts;
+
+namespace Aleph1.DI.UnityImplementation
 {
 	/// <summary>Handles loading <see cref="IModule"/> from DLL's into the <see cref="IModuleRegistrar"/></summary>
 	public static class ModuleLoader
