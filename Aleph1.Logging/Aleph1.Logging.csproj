@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net48</TargetFrameworks>
-		<Version>7.0.1</Version>
-		<AssemblyVersion>7.0.1.0</AssemblyVersion>
-		<FileVersion>7.0.1.0</FileVersion>
+		<TargetFrameworks>net40;net48</TargetFrameworks>
+		<Version>7.0.2</Version>
+		<AssemblyVersion>7.0.2.0</AssemblyVersion>
+		<FileVersion>7.0.2.0</FileVersion>
 		<Authors>Avraham Essoudry</Authors>
 		<PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
 		<PackageIcon>Aleph1.png</PackageIcon>

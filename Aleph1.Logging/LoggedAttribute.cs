@@ -97,8 +97,8 @@ namespace Aleph1.Logging
 			}
 
 			Dictionary<string, object> o = parameterNames
-				.Zip(args.Arguments, (name, value) => (name, value))
-				.ToDictionary(kvp => kvp.name, kvp => kvp.value);
+				.Zip(args.Arguments, (name, value) => new KeyValuePair<string, object>(name, value))
+				.ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
 
 			try { return JsonConvert.SerializeObject(o); }
 			catch (JsonSerializationException e) { return $"[Error in Serializing the arguments: {e.Message}]"; }

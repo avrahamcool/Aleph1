@@ -21,10 +21,17 @@ namespace Aleph1.Logging
 		/// <param name="elapsedMilliseconds">function execution time - calculated at runtime</param>
 		/// <param name="className">caller class name - calculated at runtime</param>
 		/// <param name="methodName">caller method name - calculated at build time</param>
+#if NET45_OR_GREATER
 		public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message,
 			Exception exception = null, long elapsedMilliseconds = 0,
 			string parameters = null, string returnValue = null,
 			string className = null, [CallerMemberName] string methodName = "")
+#else
+		public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message,
+			Exception exception = null, long elapsedMilliseconds = 0,
+			string parameters = null, string returnValue = null,
+			string className = null, string methodName = "")
+#endif
 		{
 			if (!logger.IsEnabled(logLevel))
 			{
