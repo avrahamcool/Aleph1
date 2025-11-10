@@ -1,5 +1,7 @@
 ﻿using System.Security.Principal;
+#if NET40 || NET48
 using System.Web;
+#endif
 
 namespace Aleph1.Utilities
 {
@@ -12,6 +14,7 @@ namespace Aleph1.Utilities
 		{
 			get
 			{
+#if NET40 || NET48
 				// Accessing HttpContext.Current.Request Throws Exception when no handler configured
 				if (HttpContext.Current != null && HttpContext.Current.Handler != null)
 				{
@@ -20,6 +23,7 @@ namespace Aleph1.Utilities
 						HttpContext.Current.User.Identity.Name;
 					return identifierFromHttp ?? string.Empty;
 				}
+#endif
 
 				return WindowsIdentity.GetCurrent()?.Name ?? string.Empty;
 			}

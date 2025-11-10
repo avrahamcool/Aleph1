@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net40;net48</TargetFrameworks>
+		<TargetFrameworks>net40;net48;netstandard2.0;net8.0</TargetFrameworks>
 		<Version>4.8.1</Version>
 		<AssemblyVersion>4.8.1.0</AssemblyVersion>
 		<FileVersion>4.8.1.0</FileVersion>
@@ -22,8 +22,12 @@
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
-	<ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net40' OR '$(TargetFramework)' == 'net48'">
 		<Reference Include="System.Web" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="System.Security.Principal.Windows" Version="4.7.0" />
 	</ItemGroup>
 
 	<ItemGroup>
