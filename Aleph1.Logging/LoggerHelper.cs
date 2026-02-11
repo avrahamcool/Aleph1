@@ -1,10 +1,8 @@
-﻿using System;
+﻿using NLog;
+
+using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-
-using Aleph1.Utilities;
-
-using NLog;
 
 namespace Aleph1.Logging
 {
@@ -21,17 +19,10 @@ namespace Aleph1.Logging
 		/// <param name="elapsedMilliseconds">function execution time - calculated at runtime</param>
 		/// <param name="className">caller class name - calculated at runtime</param>
 		/// <param name="methodName">caller method name - calculated at build time</param>
-#if NET45_OR_GREATER
 		public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message,
 			Exception exception = null, long elapsedMilliseconds = 0,
 			string parameters = null, string returnValue = null,
 			string className = null, [CallerMemberName] string methodName = "")
-#else
-		public static void LogAleph1(this ILogger logger, LogLevel logLevel, string message,
-			Exception exception = null, long elapsedMilliseconds = 0,
-			string parameters = null, string returnValue = null,
-			string className = null, string methodName = "")
-#endif
 		{
 			if (!logger.IsEnabled(logLevel))
 			{
@@ -39,8 +30,6 @@ namespace Aleph1.Logging
 			}
 
 			LogEventInfo lei = new LogEventInfo(logLevel, logger.Name, message);
-
-			lei.Properties.Add("A1_UserName", UserExtentions.CurrentUserName);
 
 			lei.Properties.Add("A1_ClassName", className ?? new StackFrame(1, false).GetMethod().DeclaringType.Name);
 			lei.Properties.Add("A1_MethodName", methodName);

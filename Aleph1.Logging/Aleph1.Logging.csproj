@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net40;net48</TargetFrameworks>
-		<Version>7.0.3</Version>
-		<AssemblyVersion>7.0.3.0</AssemblyVersion>
-		<FileVersion>7.0.3.0</FileVersion>
+		<TargetFrameworks>net48;net8.0</TargetFrameworks>
+		<Version>8.0.0</Version>
+		<AssemblyVersion>8.0.0.0</AssemblyVersion>
+		<FileVersion>8.0.0.0</FileVersion>
 		<Authors>Avraham Essoudry</Authors>
 		<PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
 		<PackageIcon>Aleph1.png</PackageIcon>
@@ -18,22 +18,14 @@
 		<Description>Logging aspect using PostSharp</Description>
 		<DebugType>Full</DebugType>
 		<DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Aleph1.Logging.xml</DocumentationFile>
-		<PackageReleaseNotes>updated nugets</PackageReleaseNotes>
+		<PackageReleaseNotes>updated for net8.0 - drop net40 support. dropped A1_UserName</PackageReleaseNotes>
 		<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-		<PackageReference Include="NLog" Version="5.5.0" />
-		<PackageReference Include="PostSharp" Version="2025.1.4" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<ProjectReference Include="..\Aleph1.Utilities\Aleph1.Utilities.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Reference Include="System.Web.Extensions" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+		<PackageReference Include="NLog" Version="6.1.0" />
+		<PackageReference Include="PostSharp" Version="2026.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
