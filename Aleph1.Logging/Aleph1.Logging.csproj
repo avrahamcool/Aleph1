@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net48;net8.0</TargetFrameworks>
-		<Version>8.0.0</Version>
-		<AssemblyVersion>8.0.0.0</AssemblyVersion>
-		<FileVersion>8.0.0.0</FileVersion>
+		<TargetFrameworks>net8.0</TargetFrameworks>
+		<Version>8.0.1</Version>
+		<AssemblyVersion>8.0.0.1</AssemblyVersion>
+		<FileVersion>8.0.0.1</FileVersion>
 		<Authors>Avraham Essoudry</Authors>
 		<PackageTags>Aleph1 Logging NLog PostSharp</PackageTags>
 		<PackageIcon>Aleph1.png</PackageIcon>
